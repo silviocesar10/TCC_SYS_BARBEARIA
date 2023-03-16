@@ -16,7 +16,7 @@ mongoose.connection.on("disconnected", async () => {
 });
 
 mongoose.connection.on("connected", async () => {
-    await populateDatabase();
+    //await populateDatabase();
     console.log("Conectado ao MongoDB.");
 });
 

@@ -8,34 +8,39 @@ const EmpresaSchema = new Schema(
             trim: true,
         },
 			email:{
-						type: String,
-            required: true,
-            trim: true,
+				type: String,
+            	required: true,
+            	trim: true,
 			},
 			senha: {
-            type: String,
-            required: true,
-      },
+            	type: String,
+            	required: true,
+      	},
 			cnpj:{
-						type: String,
-            required: true,
-            trim: true,
+				type: String,
+            	required: true,
+            	trim: true,
 			},
 		descricacao:{
-						type: String,
-            required: true,
-            trim: true,
+				type: String,
+           		required: true,
+            	trim: true,
 			},
 		telefone:{
-						type: String,
-            required: true,
-            trim: true,
+				type: String,
+            	required: true,
+            	trim: true,
 			},
 		endereco:{
-						type: String,
-            required: true,
-            trim: true,
+				type: String,
+            	required: true,
+            	trim: true,
 			},
+		cep:{
+				type: String,
+            	required: true,
+            	trim: true,
+			}
 		
 	}
     { timestamps: true }

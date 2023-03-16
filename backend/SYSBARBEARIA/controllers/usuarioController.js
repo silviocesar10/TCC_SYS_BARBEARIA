@@ -5,17 +5,17 @@ import { createError } from "../utils/error.js";
 
 export const createluno = async (req, res, next) => {
     const confSenha = req.body.confSenha;
-    const aluno = new Aluno(req.body);
+    const usuario = new Usuario(req.body);
     try {
-        if (aluno.senha != confSenha) {
+        if (usuario.senha != confSenha) {
             createError({ statusCode: 400, message: "As senhas não conferem." });
         } else {
             let salt = await bcrypt.genSalt(10);
-            let hashSenha = await bcrypt.hash(aluno.senha, salt);
-            aluno.senha = hashSenha;
-            const createdAluno = await aluno.save();
-            console.log("Aluno criado: ", createdAluno);
-            res.status(201).json(createdAluno);
+            let hashSenha = await bcrypt.hash(usuario.senha, salt);
+            usuario.senha = hashSenha;
+            const createdUsuario = await usuario.save();
+            console.log("Usuario criado: ", createdUsuario);
+            res.status(201).json(createdUsuario);
         }
     } catch (error) {
         next(error);

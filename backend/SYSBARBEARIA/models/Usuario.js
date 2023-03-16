@@ -24,6 +24,11 @@ const UsuarioSchema = new Schema(
 			unique: true,
 			index: true,
 		},
+		cep:{
+			type: String,
+			required: true,
+			trim: true
+		},
 		senha: {
 			type: String,
 			required: true,

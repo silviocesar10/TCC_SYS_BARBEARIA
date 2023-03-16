@@ -42,7 +42,7 @@ const EmpresaSchema = new Schema(
             	trim: true,
 			}
 		
-	}
+	},
     { timestamps: true }
 );
 export default mongoose.model("Empresa", EmpresaSchema);

@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
-import Aluno from "../models/Aluno.js";
+//import Aluno from "../models/Aluno.js";
 import bcrypt from "bcryptjs";
 
 const connectDatabase = async () => {
     try {
-        await mongoose.connect(process.env.MONGODB_URL_LOCAL);
+        //await mongoose.connect(process.env.MONGODB_URL_LOCAL);
+        await mongoose.connect("mongodb://127.0.0.1:27017/recomendacao");
     } catch (error) {
         throw error;
     }

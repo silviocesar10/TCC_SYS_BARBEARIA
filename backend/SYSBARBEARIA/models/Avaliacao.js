@@ -16,4 +16,4 @@ const AvaliacaoSchema = new Schema(
 	},
 	{ timestamps: true }
 );
-export default mongoose.model("Usuario", UsuarioSchema);
+export default mongoose.model("Avaliacao", AvaliacaoSchema);

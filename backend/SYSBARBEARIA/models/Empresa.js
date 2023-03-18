@@ -21,7 +21,7 @@ const EmpresaSchema = new Schema(
             	required: true,
             	trim: true,
 			},
-		descricacao:{
+		descricao:{
 				type: String,
            		required: true,
             	trim: true,

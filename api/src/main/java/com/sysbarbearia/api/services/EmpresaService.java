@@ -56,5 +56,9 @@ public class EmpresaService {
             throw new DataIntegrityException("Não é possível excluir");
         }
     }
+	public Collection<?> countEmpresas() {
+        Collection<?> collection = repository.countEmpresas();
+        return collection;
+    }
 	
 }

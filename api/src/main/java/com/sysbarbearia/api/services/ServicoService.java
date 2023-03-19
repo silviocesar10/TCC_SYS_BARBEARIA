@@ -57,4 +57,8 @@ public class ServicoService {
             throw new DataIntegrityException("Não é possível excluir um Servico associado a Reservas");
         }
     }
+	public Collection<?> countServicos() {
+        Collection<?> collection = repository.countServicos();
+        return collection;
+    }
 }

@@ -55,5 +55,9 @@ public class UsuarioService {
             throw new DataIntegrityException("Não é possível excluir um Usuario");
         }
     }
+	public Collection<?> countUsuarios() {
+        Collection<?> collection = repository.countUsuarios();
+        return collection;
+    }
 	
 }

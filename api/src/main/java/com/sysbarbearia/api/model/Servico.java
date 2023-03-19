@@ -18,9 +18,9 @@ public class Servico implements Serializable{
 	private Integer idServico;
 	
 
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "idEmpresa")
-	private Integer idEmpresa;
+	private Empresa Empresa;
 	
 	@NotBlank(message = "O campo de descricao do livro nao pode permanecer em branco!!")
 	@Size(min = 2, max = 200, message = "O campo de descricao deve ter no minimo 2 e no maximo 200 caracteres!!")
@@ -44,12 +44,12 @@ public class Servico implements Serializable{
 		this.idServico = idServico;
 	}
 
-	public Integer getIdEmpresa() {
-		return idEmpresa;
+	public Empresa getIdEmpresa() {
+		return Empresa;
 	}
 
-	public void setIdEmpresa(Integer idEmpresa) {
-		this.idEmpresa = idEmpresa;
+	public void setIdEmpresa(Empresa Empresa) {
+		this.Empresa = Empresa;
 	}
 
 	public String getDescricao() {

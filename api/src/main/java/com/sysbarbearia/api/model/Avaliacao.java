@@ -32,11 +32,11 @@ public class Avaliacao implements Serializable{
 	
 	@OneToOne
 	@JoinColumn(name = "idUsuario")
-	private Integer idUsuario;
+	private Usuario Usuario;
 	
 	@OneToOne
 	@JoinColumn(name = "idServico")
-	private Integer idServico;
+	private Servico Servico;
 		
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date dataAvalicao;
@@ -52,20 +52,20 @@ public class Avaliacao implements Serializable{
 		this.idAvaliacao = idAvaliacao;
 	}
 
-	public Integer getIdUsuario() {
-		return idUsuario;
+	public Usuario getUsuario() {
+		return Usuario;
 	}
 
-	public void setIdUsuario(Integer idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setsuario(Usuario Usuario) {
+		this.Usuario = Usuario;
 	}
 
-	public Integer getIdServico() {
-		return idServico;
+	public Servico getServico() {
+		return Servico;
 	}
 
-	public void setIdServico(Integer idServico) {
-		this.idServico = idServico;
+	public void setServico(Servico Servico) {
+		this.Servico = Servico;
 	}
 
 	public Date getDataAvalicao() {

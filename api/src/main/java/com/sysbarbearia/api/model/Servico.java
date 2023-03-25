@@ -16,12 +16,7 @@ public class Servico implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idServico;
-	
-
-	@ManyToOne
-	@JoinColumn(name = "idEmpresa")
-	private Empresa Empresa;
-	
+		
 	@NotBlank(message = "O campo de descricao do livro nao pode permanecer em branco!!")
 	@Size(min = 2, max = 200, message = "O campo de descricao deve ter no minimo 2 e no maximo 200 caracteres!!")
 	private String descricao;
@@ -32,9 +27,6 @@ public class Servico implements Serializable{
 	@NotBlank(message = "O campo de descricacao nao pode permanecer em branco!!")
 	@Size(min = 2, max = 100, message = "O campo descricacao deve ter no minimo 2 e no maximo 100 caracteres!!")
 	private String descricacao;
-	
-	@NotBlank(message = "O campo de preco nao pode permanecer em branco!!")
-	private Double preco;
 
 	public Integer getIdServico() {
 		return idServico;
@@ -42,14 +34,6 @@ public class Servico implements Serializable{
 
 	public void setIdServico(Integer idServico) {
 		this.idServico = idServico;
-	}
-
-	public Empresa getIdEmpresa() {
-		return Empresa;
-	}
-
-	public void setIdEmpresa(Empresa Empresa) {
-		this.Empresa = Empresa;
 	}
 
 	public String getDescricao() {
@@ -76,16 +60,10 @@ public class Servico implements Serializable{
 		this.descricacao = descricacao;
 	}
 
-	public Double getPreco() {
-		return preco;
-	}
-
-	public void setPreco(Double preco) {
-		this.preco = preco;
-	}
-
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
+	
 	
 }

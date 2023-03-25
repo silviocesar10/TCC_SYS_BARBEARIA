@@ -1,12 +1,12 @@
 package com.sysbarbearia.api.controllers;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
+//import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sysbarbearia.api.model.Servico;
+//import com.sysbarbearia.api.model.Servico;
 import com.sysbarbearia.api.services.RecomendacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,7 +17,8 @@ public class RecomendacaoController {
 	private RecomendacaoService s;
 	@RequestMapping( method = RequestMethod.GET)
 	    public ResponseEntity<Void> get() {
-	    	s.recomedacao();
+	    	System.out.println("\n\n\nChamando recomendacao\n\n\n");
+			s.recomedacao();
 	        return ResponseEntity.noContent().build();
 	    }
 	       

@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sysbarbearia.api.services.exceptions.*;
 import com.sysbarbearia.api.model.Barbearia;
-import com.sysbarbearia.api.services.EmpresaService;
+import com.sysbarbearia.api.services.BarbeariaService;
 
 @RestController
-@RequestMapping(value = "/barbearia")
+@RequestMapping(value = "/barbearias")
 public class BarbeariaController {
 	@Autowired
-	private EmpresaService service;
+	private BarbeariaService service;
 	
 	@RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<Collection<Barbearia>> findAll() {

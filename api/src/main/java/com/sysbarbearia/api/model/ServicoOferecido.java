@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.validation.constraints.NotBlank;
+//import javax.validation.constraints.NotBlank;
 
 import lombok.Data;
 
@@ -26,10 +26,10 @@ public class ServicoOferecido implements Serializable{
 	private Barbearia barbearia;
 	
 	@OneToOne
-	@JoinColumn(name = "idCliente")
-	private Cliente cliente;
+	@JoinColumn(name = "idServico")
+	private Servico servico;
 	
-	@NotBlank(message = "O campo de preco nao pode permanecer em branco!!")
+	//@NotBlank(message = "O campo de preco nao pode permanecer em branco!!")
 	private Double preco;
 
 	public Integer getIdServicoOfrc() {
@@ -48,12 +48,14 @@ public class ServicoOferecido implements Serializable{
 		this.barbearia = barbearia;
 	}
 
-	public Cliente getCliente() {
-		return cliente;
+	
+
+	public Servico getServico() {
+		return servico;
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setServico(Servico servico) {
+		this.servico = servico;
 	}
 
 	public Double getPreco() {

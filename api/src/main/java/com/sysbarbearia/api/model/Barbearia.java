@@ -42,11 +42,12 @@ public class Barbearia implements Serializable{
 	@NotBlank(message = "o campo descricacao nao deve estar vazio")
 	private String descricao;
 
-	public Integer getIdEmpresa() {
+	
+	public Integer getIdBarbearia() {
 		return idBarbearia;
 	}
 
-	public void setIdEmpresa(Integer idBarbearia) {
+	public void setIdBarbearia(Integer idBarbearia) {
 		this.idBarbearia = idBarbearia;
 	}
 

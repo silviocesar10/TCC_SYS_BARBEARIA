@@ -1,0 +1,318 @@
+{
+	"info": {
+		"_postman_id": "6611791e-01c7-4458-84ab-b6aade918f41",
+		"name": "SYSBarbearia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15667479"
+	},
+	"item": [
+		{
+			"name": "test",
+			"item": [
+				{
+					"name": "localhost:8080/barbearias",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"barbeariaDemo1\",\n    \"email\":\"barbearia1@email.com\",\n    \"senha\":\"123\",\n    \"cnpj\": \"000000000000\",\n    \"telefone\":\"000000111\",\n    \"endereco\":\"Cachoeiro\",\n    \"descricao\":\"empresa familiar\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/barbearias",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"barbearias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/barbearias",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/barbearias",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"barbearias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/servicos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descricao\" : \"servico 1\",\n    \"nomeProdServ\" : \"servico 1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/servicos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"servicos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/servicos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descricao\" : \"servico 1\",\n    \"nomeProdServ\" : \"servico 1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/servicos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"servicos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/servicos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descricao\" : \"servico 5\",\n    \"nomeProdServ\" : \"servico 5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/servicos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"servicos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/servicos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descricao\" : \"servico 4\",\n    \"nomeProdServ\" : \"servico 4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/servicos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"servicos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/servicos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descricao\" : \"servico 3\",\n    \"nomeProdServ\" : \"servico 3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/servicos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"servicos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/servicos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descricao\" : \"servico 2\",\n    \"nomeProdServ\" : \"servico 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/servicos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"servicos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/servicosoferecidos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"barbearia\" : {\n        \"idBarbearia\" : 1\n    },\n    \"servico\" : {\n        \"idServico\" : 1\n    },\n    \"preco\": 10.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/servicosoferecidos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"servicosoferecidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/servicosoferecidos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"barbearia\" : {\n        \"idBarbearia\" : 1\n    },\n    \"servico\" : {\n        \"idServico\" : 2\n    },\n    \"preco\": 10.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/servicosoferecidos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"servicosoferecidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/servicosoferecidos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"barbearia\" : {\n        \"idBarbearia\" : 1\n    },\n    \"servico\" : {\n        \"idServico\" : 3\n    },\n    \"preco\": 10.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/servicosoferecidos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"servicosoferecidos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

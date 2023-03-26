@@ -2,7 +2,9 @@ package com.sysbarbearia.api.model;
 
 import java.io.Serializable;
 
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,11 +23,11 @@ public class ServicoOferecido implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idServicoOfrc;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idBarbearia")
 	private Barbearia barbearia;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idServico")
 	private Servico servico;
 	

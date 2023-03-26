@@ -23,10 +23,7 @@ public class Servico implements Serializable{
 	
 	@NotBlank(message = "o campo nao deve estar vazio")
 	private String nomeProdServ;
-	 
-	@NotBlank(message = "O campo de descricacao nao pode permanecer em branco!!")
-	@Size(min = 2, max = 100, message = "O campo descricacao deve ter no minimo 2 e no maximo 100 caracteres!!")
-	private String descricacao;
+	
 
 	public Integer getIdServico() {
 		return idServico;
@@ -50,14 +47,6 @@ public class Servico implements Serializable{
 
 	public void setNomeProdServ(String nomeProdServ) {
 		this.nomeProdServ = nomeProdServ;
-	}
-
-	public String getDescricacao() {
-		return descricacao;
-	}
-
-	public void setDescricacao(String descricacao) {
-		this.descricacao = descricacao;
 	}
 
 	public static long getSerialversionuid() {

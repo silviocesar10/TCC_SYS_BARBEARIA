@@ -30,14 +30,14 @@ public class BarbeariaService {
 	
 	public Barbearia insert(Barbearia obj)
 	{
-		obj.setIdEmpresa(null);
+		obj.setIdBarbearia(null);;
 		return repository.save(obj);	
 			
 	}
 	
 	public Barbearia update(Barbearia obj)
 	{
-		findById(obj.getIdEmpresa());
+		findById(obj.getIdBarbearia());
         try 
         {
         	return repository.save(obj);

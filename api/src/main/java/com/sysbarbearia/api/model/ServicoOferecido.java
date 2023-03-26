@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,11 +22,11 @@ public class ServicoOferecido implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idServicoOfrc;
 	
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne
 	@JoinColumn(name = "idBarbearia")
 	private Barbearia barbearia;
 	
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne
 	@JoinColumn(name = "idServico")
 	private Servico servico;
 	

@@ -18,7 +18,7 @@ import com.sysbarbearia.api.services.UsoService;
 import com.sysbarbearia.api.services.exceptions.*;
 
 @RestController
-@RequestMapping(value = "/avaliacoes")
+@RequestMapping(value = "/usos")
 public class UsoController {
 	@Autowired
     private UsoService service;

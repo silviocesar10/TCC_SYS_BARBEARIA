@@ -10,14 +10,14 @@ import javax.validation.constraints.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode( of = {"idEmpresa"})
+@EqualsAndHashCode( of = {"idBarbearia"})
 public class Barbearia implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idEmpresa;
+	private Integer idBarbearia;
 	
 	@NotBlank(message = "O campo com o titulo do nome nao pode permanecer em branco!!")
 	@Size(min = 2, max = 50, message = "O campo de titulo deve ter no minimo 2 e no maximo 50 caracteres!!")
@@ -43,11 +43,11 @@ public class Barbearia implements Serializable{
 	private String descricao;
 
 	public Integer getIdEmpresa() {
-		return idEmpresa;
+		return idBarbearia;
 	}
 
-	public void setIdEmpresa(Integer idEmpresa) {
-		this.idEmpresa = idEmpresa;
+	public void setIdEmpresa(Integer idBarbearia) {
+		this.idBarbearia = idBarbearia;
 	}
 
 	public String getNome() {

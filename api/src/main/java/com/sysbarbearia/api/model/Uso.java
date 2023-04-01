@@ -43,6 +43,17 @@ public class Uso implements Serializable{
 	
 	@NotBlank(message = "O campo nota nao deve estar vazio")
 	private Double nota;
+	
+	@NotBlank(message = "O campo de preco nao pode permanecer em branco!!")
+	private Double preco;
+
+	public Double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(Double preco) {
+		this.preco = preco;
+	}
 
 	public Integer getidUso() {
 		return idUso;

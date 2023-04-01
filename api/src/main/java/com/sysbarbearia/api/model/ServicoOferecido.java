@@ -30,8 +30,6 @@ public class ServicoOferecido implements Serializable{
 	@JoinColumn(name = "idServico")
 	private Servico servico;
 	
-	//@NotBlank(message = "O campo de preco nao pode permanecer em branco!!")
-	private Double preco;
 
 	public Integer getIdServicoOfrc() {
 		return idServicoOfrc;
@@ -59,13 +57,6 @@ public class ServicoOferecido implements Serializable{
 		this.servico = servico;
 	}
 
-	public Double getPreco() {
-		return preco;
-	}
-
-	public void setPreco(Double preco) {
-		this.preco = preco;
-	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;

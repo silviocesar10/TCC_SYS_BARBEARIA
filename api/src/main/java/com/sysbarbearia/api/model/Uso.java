@@ -41,10 +41,12 @@ public class Uso implements Serializable{
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date dataAvalicao;
 	
-	@NotBlank(message = "O campo nota nao deve estar vazio")
+	//@NotBlank(message = "O campo nota nao deve estar vazio")
+	@NotNull(message = "O campo nota nao deve estar vazio")
 	private Double nota;
 	
-	@NotBlank(message = "O campo de preco nao pode permanecer em branco!!")
+	//@NotBlank(message = "O campo de preco nao pode permanecer em branco!!")
+	@NotNull(message = "O campo de preco nao pode permanecer em branco!!")
 	private Double preco;
 
 	public Double getPreco() {

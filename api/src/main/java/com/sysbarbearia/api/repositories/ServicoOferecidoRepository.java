@@ -10,6 +10,10 @@ import com.sysbarbearia.api.model.ServicoOferecido;
 
 public interface ServicoOferecidoRepository extends JpaRepository<ServicoOferecido, Integer> {
 	@Transactional(readOnly = true)
-	@Query(value = "SELECT COUTN(*) FROM SERVICOSOFERECIDOS" , nativeQuery = true)
+	@Query(value = "SELECT COUNT(*) FROM SERVICOS_OFERECIDOS" , nativeQuery = true)
     public Collection<?> countServicosOferecidos();
+	
+	@Transactional(readOnly = true)
+	@Query(value = "SELECT * FROM SERVICOS_OFERECIDOS sofc WHERE sofc.ID_BARBEARIA = ?1" , nativeQuery = true)
+	public Collection<ServicoOferecido> findByIdBarbearia(Integer id);
 }

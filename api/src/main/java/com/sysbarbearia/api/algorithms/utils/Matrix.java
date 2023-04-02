@@ -8,8 +8,15 @@ public class Matrix {
 	public Double[][] getContent() {
 		return content;
 	}
+	public Double getContentByIndex(Integer row, Integer col) {
+		return this.content[row][col];
+	}
+
 	public void setContent(Double[][] content) {
 		this.content = content;
+	}
+	public void setContentByIndex(Integer row, Integer col, Double content) {
+		this.content[row][col] = content;
 	}
 	public Integer getRowSize() {
 		return rowSize;
@@ -24,9 +31,9 @@ public class Matrix {
 		this.colSize = colSize;
 	}
 	public Matrix(Integer rowSize, Integer colSize) {
-		super();
 		this.rowSize = rowSize;
 		this.colSize = colSize;
+		this.content = new Double[this.rowSize][this.colSize];
 	}
     
    

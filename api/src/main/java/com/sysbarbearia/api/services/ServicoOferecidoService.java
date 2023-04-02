@@ -62,4 +62,8 @@ public class ServicoOferecidoService {
         Collection<?> collection = repository.countServicosOferecidos();
         return collection;
     }
+	public Collection<ServicoOferecido> findByIdBarbearia(Integer id) {
+        Collection<ServicoOferecido> collection = repository.findByIdBarbearia(id);
+        return collection;
+    }
 }

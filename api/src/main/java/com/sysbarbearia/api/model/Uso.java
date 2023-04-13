@@ -39,7 +39,7 @@ public class Uso implements Serializable{
 	private ServicoOferecido servicoofrc;
 		
 	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date dataAvalicao;
+	private Date dataAvaliacao;
 	
 	//@NotBlank(message = "O campo nota nao deve estar vazio")
 	@NotNull(message = "O campo nota nao deve estar vazio")
@@ -81,12 +81,12 @@ public class Uso implements Serializable{
 		this.servicoofrc = servico;
 	}
 
-	public Date getDataAvalicao() {
-		return dataAvalicao;
+	public Date getDataAvaliacao() {
+		return dataAvaliacao;
 	}
 
-	public void setDataAvalicao(Date dataAvalicao) {
-		this.dataAvalicao = dataAvalicao;
+	public void setDataAvaliacao(Date dataAvaliacao) {
+		this.dataAvaliacao = dataAvaliacao;
 	}
 
 	public Double getNota() {

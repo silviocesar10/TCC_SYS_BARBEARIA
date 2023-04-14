@@ -31,13 +31,13 @@ public class UsoService {
 	
 	public Uso insert(Uso obj)
 	{
-		obj.setidUso(null);
+		obj.setIdUso(null);
 		return repository.save(obj);	
 	}
 	
 	public Uso update(Uso obj)
 	{
-		findById(obj.getidUso());
+		findById(obj.getIdUso());
         try 
         {
         	return repository.save(obj);

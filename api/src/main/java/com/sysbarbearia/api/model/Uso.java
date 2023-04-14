@@ -49,36 +49,28 @@ public class Uso implements Serializable{
 	@NotNull(message = "O campo de preco nao pode permanecer em branco!!")
 	private Double preco;
 
-	public Double getPreco() {
-		return preco;
-	}
-
-	public void setPreco(Double preco) {
-		this.preco = preco;
-	}
-
-	public Integer getidUso() {
+	public Integer getIdUso() {
 		return idUso;
 	}
 
-	public void setidUso(Integer idUso) {
+	public void setIdUso(Integer idUso) {
 		this.idUso = idUso;
 	}
 
-	public Cliente getUsuario() {
+	public Cliente getCliente() {
 		return cliente;
 	}
 
-	public void setsuario(Cliente cliente) {
+	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
 
-	public ServicoOferecido getServico() {
+	public ServicoOferecido getServicoofrc() {
 		return servicoofrc;
 	}
 
-	public void setServico(ServicoOferecido servico) {
-		this.servicoofrc = servico;
+	public void setServicoofrc(ServicoOferecido servicoofrc) {
+		this.servicoofrc = servicoofrc;
 	}
 
 	public Date getDataAvaliacao() {
@@ -96,6 +88,18 @@ public class Uso implements Serializable{
 	public void setNota(Double nota) {
 		this.nota = nota;
 	}
-	
+
+	public Double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(Double preco) {
+		this.preco = preco;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	
 }

@@ -68,7 +68,7 @@ public class RecomendacaoService {
  	}
 	private Optional<Uso> getUsoByServicoByCliente(Cliente c, ServicoOferecido s){
 		List<Uso> allUso = new ArrayList<Uso>(avservice.findAll());
-		return allUso.stream().filter(a -> a.getServico().getIdServicoOfrc() == s.getIdServicoOfrc() && a.getUsuario().getidCliente() == c.getidCliente()).findFirst();
+		return allUso.stream().filter(a -> a.getServicoofrc().getIdServicoOfrc() == s.getIdServicoOfrc() && a.getCliente().getidCliente() == c.getidCliente()).findFirst();
 	}
 	
 	private void printContentMatrix(Matrix m) {

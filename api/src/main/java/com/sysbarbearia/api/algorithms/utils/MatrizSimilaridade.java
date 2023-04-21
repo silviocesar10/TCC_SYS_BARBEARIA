@@ -62,4 +62,12 @@ public class MatrizSimilaridade {
     public Double[][] getContent() {
         return content;
     }
+
+    public Integer getRowSize() {
+        return rowSize;
+    }
+
+    public Integer getColSize() {
+        return colSize;
+    }
 }

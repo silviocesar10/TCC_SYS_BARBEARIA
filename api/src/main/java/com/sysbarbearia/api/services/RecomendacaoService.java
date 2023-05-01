@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 
 import com.sysbarbearia.api.algorithms.utils.MatrizSimilaridade;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.dao.DataIntegrityViolationException;
@@ -24,14 +25,14 @@ public class RecomendacaoService {
 	private List<Cliente> allCliente = new ArrayList<Cliente>(uservice.findAll());
 
 
-	public void recomendacaoCollaborativa(int idEmpresa, int idCliente) {
-		List<ServicoOferecido> allServicos = new ArrayList<ServicoOferecido>(sservice.findByIdBarbearia(idEmpresa));
-		MatrizBasica mb = new MatrizBasica(allServicos, allCliente);
+	public void recomendacaoCollaborativa(Integer idEmpresa, Integer idCliente) {
+		//List<ServicoOferecido> allServicos = new ArrayList<ServicoOferecido>(sservice.findByIdBarbearia(1));
+		//MatrizBasica mb = new MatrizBasica(allServicos, allCliente);
 		//if(encontrarCliente(idCliente, allCliente) == null){
 			//System.out.println( "O cliente informado não pode ser encontrado para ser avaliado");
 		//}
-		MatrizSimilaridade ms = new MatrizSimilaridade(mb, encontrarCliente(idCliente, allCliente));
-		printContentMatrix(ms.getContent(), mb.getRowSize(),  mb.getColSize());
+		//MatrizSimilaridade ms = new MatrizSimilaridade(mb, encontrarCliente(idCliente, allCliente));
+		//printContentMatrix(ms.getContent(), mb.getRowSize(),  mb.getColSize());
 
 	}
 
@@ -56,5 +57,7 @@ public class RecomendacaoService {
 			}
 		}
 	}
+
+	public RecomendacaoService(){}
 
 }

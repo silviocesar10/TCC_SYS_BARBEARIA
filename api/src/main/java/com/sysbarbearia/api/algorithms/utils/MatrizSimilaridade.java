@@ -25,19 +25,19 @@ public class MatrizSimilaridade {
         content = new Double[rowSize][colSize];
 
         for (int i = 0; i < rowSize; i++) {
-            calculateCellsValues(matrizBasica, i);
+            calculoValorCelula(matrizBasica, i);
         }
     }
 
-    private void calculateCellsValues(Double[][] matrizBasica, Integer row) {
+    private void calculoValorCelula(Double[][] matrizBasica, Integer row) {
         List<Coordenadas> coordenadas = new ArrayList<Coordenadas>();
 
         for(int j = 0; j < colSize; j++) {
-            coordenadas.add(calculateCelula(matrizBasica, row, j, coordenadas));
+            coordenadas.add(calculoCelula(matrizBasica, row, j, coordenadas));
         }
     }
 
-    private Coordenadas calculateCelula(Double[][] matrizBasica, Integer linha, Integer coluna,  List<Coordenadas> coordenadas) {
+    private Coordenadas calculoCelula(Double[][] matrizBasica, Integer linha, Integer coluna,  List<Coordenadas> coordenadas) {
         Integer distanceColIndex = colSize - 2;
         Integer similarityColIndex = colSize - 1;
         DistanciaEuclidiana DE = new DistanciaEuclidiana();

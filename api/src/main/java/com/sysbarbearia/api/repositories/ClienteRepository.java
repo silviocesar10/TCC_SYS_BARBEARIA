@@ -12,6 +12,6 @@ import com.sysbarbearia.api.model.*;
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
 	@Transactional(readOnly = true)
-	@Query(value = "SELECT COUTN(*) FROM CLIENTE" , nativeQuery = true)
+	@Query(value = "SELECT COUNT(*) FROM CLIENTE" , nativeQuery = true)
     public Collection<?> countUsuarios();
 }

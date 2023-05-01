@@ -12,6 +12,6 @@ import com.sysbarbearia.api.model.*;
 @Repository
 public interface ServicoRepository extends JpaRepository<Servico, Integer> {
 	@Transactional(readOnly = true)
-	@Query(value = "SELECT COUTN(*) FROM SERVICOS" , nativeQuery = true)
+	@Query(value = "SELECT COUNT(*) FROM SERVICOS" , nativeQuery = true)
     public Collection<?> countServicos();
 }

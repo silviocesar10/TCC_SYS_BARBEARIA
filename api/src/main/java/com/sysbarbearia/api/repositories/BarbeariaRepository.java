@@ -13,6 +13,6 @@ import com.sysbarbearia.api.model.*;
 public interface BarbeariaRepository extends JpaRepository<Barbearia, Integer> {
 	
 	@Transactional(readOnly = true)
-	@Query(value = "SELECT COUTN(*) FROM EMPRESAS" , nativeQuery = true)
+	@Query(value = "SELECT COUNT(*) FROM EMPRESAS" , nativeQuery = true)
     public Collection<?> countEmpresas();
 }

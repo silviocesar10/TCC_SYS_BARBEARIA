@@ -4,10 +4,13 @@ import java.util.Collection;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.sysbarbearia.api.model.ServicoOferecido;
 
+
+@Repository
 public interface ServicoOferecidoRepository extends JpaRepository<ServicoOferecido, Integer> {
 	@Transactional(readOnly = true)
 	@Query(value = "SELECT COUNT(*) FROM SERVICO_OFERECIDO" , nativeQuery = true)

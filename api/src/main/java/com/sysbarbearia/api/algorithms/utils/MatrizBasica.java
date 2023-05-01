@@ -13,7 +13,7 @@ public class MatrizBasica {
 	private Integer colSize;
 
 	@Autowired
-	private UsoService avservice = new UsoService();
+	private UsoService avservice;
 	private List<Cliente> clientes = new ArrayList<Cliente>();
 	private List<ServicoOferecido> servicos = new ArrayList<ServicoOferecido>();
 

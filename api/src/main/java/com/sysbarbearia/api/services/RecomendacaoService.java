@@ -17,7 +17,7 @@ import com.sysbarbearia.api.algorithms.utils.MatrizBasica;
 @Service
 public class RecomendacaoService {
 	@Autowired
-	private ClienteService uservice = new ClienteService();
+	private ClienteService uservice;
 
 	@Autowired
 	private ServicoOferecidoService sservice;
@@ -25,8 +25,9 @@ public class RecomendacaoService {
 
 
 	public void recomendacaoCollaborativa(Integer idEmpresa, Integer idCliente) {
-		sservice = new ServicoOferecidoService();
+		//sservice = new ServicoOferecidoService();
 		List<ServicoOferecido> allServicos = new ArrayList<ServicoOferecido>(sservice.findByIdBarbearia(1));
+		//List<ServicoOferecido> allServicos = null;
 		allCliente = new ArrayList<Cliente>(uservice.findAll());
 		MatrizBasica mb = new MatrizBasica(allServicos, allCliente);
 		//if(clienteEncontrado(idCliente) == null){

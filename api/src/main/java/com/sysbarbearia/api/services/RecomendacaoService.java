@@ -24,16 +24,16 @@ public class RecomendacaoService {
 	private List<Cliente> allCliente;
 
 
-	public void recomendacaoCollaborativa(int idEmpresa, int idCliente) {
+	public void recomendacaoCollaborativa(Integer idEmpresa, Integer idCliente) {
 		sservice = new ServicoOferecidoService();
-		List<ServicoOferecido> allServicos = new ArrayList<ServicoOferecido>(sservice.findByIdBarbearia(new Integer(1)));
+		List<ServicoOferecido> allServicos = new ArrayList<ServicoOferecido>(sservice.findByIdBarbearia(1));
 		allCliente = new ArrayList<Cliente>(uservice.findAll());
 		MatrizBasica mb = new MatrizBasica(allServicos, allCliente);
 		//if(clienteEncontrado(idCliente) == null){
 			//System.out.println( "O cliente informado não pode ser encontrado para ser avaliado");
 		//}
-		MatrizSimilaridade ms = new MatrizSimilaridade(mb, encontrarCliente(idCliente, allCliente));
-		printContentMatrix(ms.getContent(), mb.getRowSize(),  mb.getColSize());
+		MatrizSimilaridade ms = new MatrizSimilaridade(mb, encontrarCliente(1, allCliente));
+		printContentMatrix(ms.getContent(), ms.getRowSize(),  ms.getColSize());
 
 	}
 

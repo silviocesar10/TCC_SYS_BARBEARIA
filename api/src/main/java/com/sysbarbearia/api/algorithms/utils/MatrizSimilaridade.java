@@ -30,7 +30,7 @@ public class MatrizSimilaridade {
     }
 
     private void calculateCellsValues(Double[][] matrizBasica, Integer row) {
-        List<Coordenadas> coordenadas = new ArrayList<>();
+        List<Coordenadas> coordenadas = new ArrayList<Coordenadas>();
 
         for(int j = 0; j < colSize; j++) {
             coordenadas.add(calculateCelula(matrizBasica, row, j, coordenadas));

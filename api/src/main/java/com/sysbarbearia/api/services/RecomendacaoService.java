@@ -27,9 +27,9 @@ public class RecomendacaoService {
 	public void recomendacaoCollaborativa(int idEmpresa, int idCliente) {
 		List<ServicoOferecido> allServicos = new ArrayList<ServicoOferecido>(sservice.findByIdBarbearia(idEmpresa));
 		MatrizBasica mb = new MatrizBasica(allServicos, allCliente);
-		if(encontrarCliente(idCliente, allCliente) == null){
-			System.out.println( "O cliente informado não pode ser encontrado para ser avaliado");
-		}
+		//if(encontrarCliente(idCliente, allCliente) == null){
+			//System.out.println( "O cliente informado não pode ser encontrado para ser avaliado");
+		//}
 		MatrizSimilaridade ms = new MatrizSimilaridade(mb, encontrarCliente(idCliente, allCliente));
 		printContentMatrix(ms.getContent(), mb.getRowSize(),  mb.getColSize());
 

@@ -22,17 +22,18 @@ public class RecomendacaoService {
 
 	@Autowired
 	private ServicoOferecidoService sservice;
-	private List<Cliente> allCliente = new ArrayList<Cliente>(uservice.findAll());
+	private List<Cliente> allCliente;
 
 
 	public void recomendacaoCollaborativa(Integer idEmpresa, Integer idCliente) {
-		//List<ServicoOferecido> allServicos = new ArrayList<ServicoOferecido>(sservice.findByIdBarbearia(1));
-		//MatrizBasica mb = new MatrizBasica(allServicos, allCliente);
+		allCliente = new ArrayList<Cliente>(uservice.findAll());
+		List<ServicoOferecido> allServicos = new ArrayList<ServicoOferecido>(sservice.findByIdBarbearia(1));
+		MatrizBasica mb = new MatrizBasica(allServicos, allCliente);
 		//if(encontrarCliente(idCliente, allCliente) == null){
 			//System.out.println( "O cliente informado não pode ser encontrado para ser avaliado");
 		//}
-		//MatrizSimilaridade ms = new MatrizSimilaridade(mb, encontrarCliente(idCliente, allCliente));
-		//printContentMatrix(ms.getContent(), mb.getRowSize(),  mb.getColSize());
+		MatrizSimilaridade ms = new MatrizSimilaridade(mb, encontrarCliente(idCliente, allCliente));
+		printContentMatrix(ms.getContent(), mb.getRowSize(),  mb.getColSize());
 
 	}
 

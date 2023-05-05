@@ -12,10 +12,10 @@ public class MatrizBasica {
 	private Integer rowSize;
 	private Integer colSize;
 
-	@Autowired
-	private UsoService avservice;
-	private List<Cliente> clientes = new ArrayList<Cliente>();
-	private List<ServicoOferecido> servicos = new ArrayList<ServicoOferecido>();
+	///@Autowired
+	//private UsoService avservice;
+	private List<Cliente> clientes;
+	private List<ServicoOferecido> servicos;
 
 	//private Integer usuarioRow;
 
@@ -47,7 +47,10 @@ public class MatrizBasica {
 	}
 
 	private Optional<Uso> getUsoByServicoByCliente(Cliente c, ServicoOferecido s) {
-		List<Uso> allUso = new ArrayList<Uso>(avservice.findAll());
+		UsoService avservice = new UsoService();
+		System.out.println("oilalsdjlldaslkjdladjldajdlkjsldjaksjldkajsdlk "+avservice);
+		//List<Uso> allUso = new ArrayList<Uso>(avservice.findAll());
+		List<Uso> allUso = new ArrayList<Uso>(avservice.findTudo());
 		if (allUso.stream().filter(a -> a.getServicoofrc().getIdServicoOfrc() == s.getIdServicoOfrc() && a.getCliente().getidCliente() == c.getidCliente()).findFirst() == null) {
 			return null;
 		} else {

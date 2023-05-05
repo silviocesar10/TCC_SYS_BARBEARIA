@@ -28,6 +28,10 @@ public class UsoService {
 	{
 		return repository.findAll();
 	}
+	public Collection<Uso> findTudo()
+	{
+		return repository.findTudo();
+	}
 	
 	public Uso insert(Uso obj)
 	{

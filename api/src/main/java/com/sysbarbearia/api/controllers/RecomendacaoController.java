@@ -19,7 +19,7 @@ public class RecomendacaoController {
 	@RequestMapping( method = RequestMethod.GET)
 	public ResponseEntity<Void> get() {
 		System.out.println("\n\n\nChamando recomendacao\n\n\n");
-		s = new RecomendacaoService();
+		//s = new RecomendacaoService();
 		s.recomendacaoCollaborativa(1,1);
 		return ResponseEntity.noContent().build();
 	}

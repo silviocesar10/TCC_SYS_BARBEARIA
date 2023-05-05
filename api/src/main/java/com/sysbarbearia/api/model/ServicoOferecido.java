@@ -11,10 +11,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 //import javax.validation.constraints.NotBlank;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode( of = {"idServicoOfrc"})
 public class ServicoOferecido implements Serializable{
 	private static final long serialVersionUID = 1L;
 	

@@ -1,5 +1,6 @@
 package com.sysbarbearia.api.algorithms.utils;
 import com.sysbarbearia.api.model.*;
+import com.sysbarbearia.api.repositories.UsoRepository;
 import com.sysbarbearia.api.services.UsoService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,6 +19,12 @@ public class MatrizBasica {
 	private List<ServicoOferecido> servicos;
 
 	//private Integer usuarioRow;
+
+	@Autowired
+	private UsoService usoService;
+
+	@Autowired
+	private UsoRepository repository;
 
 	public MatrizBasica(List<ServicoOferecido> servicos, List<Cliente> clientes) {
 		this.rowSize = clientes.size();
@@ -47,10 +54,12 @@ public class MatrizBasica {
 	}
 
 	private Optional<Uso> getUsoByServicoByCliente(Cliente c, ServicoOferecido s) {
-		UsoService avservice = new UsoService();
-		System.out.println("oilalsdjlldaslkjdladjldajdlkjsldjaksjldkajsdlk "+avservice);
+		//UsoService avservice = new UsoService();
+		System.out.println("conteudo usoService "+ usoService);
+		System.out.println("conteudo usoRepository "+ repository);
 		//List<Uso> allUso = new ArrayList<Uso>(avservice.findAll());
-		List<Uso> allUso = new ArrayList<Uso>(avservice.findTudo());
+		List<Uso> allUso;// = new ArrayList<Uso>();
+		allUso = new ArrayList<Uso>(repository.findAll());
 		if (allUso.stream().filter(a -> a.getServicoofrc().getIdServicoOfrc() == s.getIdServicoOfrc() && a.getCliente().getidCliente() == c.getidCliente()).findFirst() == null) {
 			return null;
 		} else {

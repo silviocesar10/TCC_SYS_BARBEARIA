@@ -37,7 +37,7 @@ public class RecomendacaoService {
 		//if(encontrarCliente(idCliente, allCliente) == null){
 		//System.out.println( "O cliente informado não pode ser encontrado para ser avaliado");
 		//}
-		//MatrizSimilaridade ms = new MatrizSimilaridade(mb, encontrarCliente(idCliente, allCliente));
+			MatrizSimilaridade ms = new MatrizSimilaridade(mb, encontrarCliente(1, allCliente));
 		//printContentMatrix(ms.getContent(), mb.getRowSize(),  mb.getColSize());
 
 

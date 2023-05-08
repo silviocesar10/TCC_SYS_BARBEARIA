@@ -5,18 +5,9 @@ import java.util.ArrayList;
 
 
 import com.sysbarbearia.api.algorithms.utils.MatrizSimilaridade;
-import com.sysbarbearia.api.model.Uso;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.dao.DataIntegrityViolationException;
-//import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import com.sysbarbearia.api.repositories.UsoRepository;
+
 
 import com.sysbarbearia.api.model.ServicoOferecido;
 import com.sysbarbearia.api.model.Cliente;
@@ -25,10 +16,10 @@ import com.sysbarbearia.api.algorithms.utils.MatrizBasica;
 @Service
 public class RecomendacaoService {
 	@Autowired
-	private ClienteService uservice;
+	private ClienteService clienteService;
 
 	@Autowired
-	private ServicoOferecidoService sservice;
+	private ServicoOferecidoService servicoOferecidoService;
 	private List<Cliente> allCliente;
 
 	//@Autowired
@@ -36,19 +27,18 @@ public class RecomendacaoService {
 	@Autowired
 	UsoService usoService;
 	public void recomendacaoCollaborativa(Integer idEmpresa, Integer idCliente) {
-		allCliente = new ArrayList<Cliente>(uservice.findAll());
-		List<ServicoOferecido> allServicos = new ArrayList<ServicoOferecido>(sservice.findByIdBarbearia(1));
-		//MatrizBasica mb = new MatrizBasica(allServicos, allCliente);
+		allCliente = new ArrayList<Cliente>(clienteService.findAll());
+		List<ServicoOferecido> allServicos = new ArrayList<ServicoOferecido>(servicoOferecidoService.findByIdBarbearia(1));
+		MatrizBasica mb = new MatrizBasica(allServicos, allCliente);
 		//if(encontrarCliente(idCliente, allCliente) == null){
 		//System.out.println( "O cliente informado não pode ser encontrado para ser avaliado");
 		//}
-		//MatrizSimilaridade ms = new MatrizSimilaridade(mb, encontrarCliente(idCliente, allCliente));
-		//printContentMatrix(ms.getContent(), mb.getRowSize(),  mb.getColSize());
-		//UsoService avservice = new UsoService();
-		//List<Uso> allUso = new ArrayList<Uso>(avservice.findAll());
+		MatrizSimilaridade ms = new MatrizSimilaridade(mb, encontrarCliente(idCliente, allCliente));
+		printContentMatrix(ms.getContent(), mb.getRowSize(),  mb.getColSize());
+		UsoService avservice = new UsoService();
 
-		List<Uso> allUso = new ArrayList<Uso>(usoService.findAll());
-		allUso.forEach(System.out::println);
+		//List<Uso> allUso = new ArrayList<Uso>(usoService.findAll());
+		//allUso.forEach(System.out::println);
 	}
 
 	public Cliente encontrarCliente(int id, List<Cliente> l){

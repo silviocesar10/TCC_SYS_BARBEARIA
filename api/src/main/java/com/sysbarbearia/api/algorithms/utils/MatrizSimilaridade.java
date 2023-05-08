@@ -43,16 +43,17 @@ public class MatrizSimilaridade {
         DistanciaEuclidiana DE = new DistanciaEuclidiana();
         if (coluna.equals(distanceColIndex)) {
             content[linha][coluna] = DE.calcularDistancia(coordenadas);
-            return new Coordenadas(new Double(null) , new Double(null) );
+            return montarCooordenada(null, null);
         }
 
         if (coluna.equals(similarityColIndex)) {
             content[linha][coluna] = calcularSimiliridade(DE.calcularDistancia(coordenadas));
-            return new Coordenadas(new Double(null) , new Double(null) );
+            return montarCooordenada(null, null);
         }
 
         content[linha][coluna] = matrizBasica[linha][coluna];
-        return new Coordenadas(matrizBasica[linhaUsuario][coluna], content[linha][coluna]);
+        //return new Coordenadas(matrizBasica[linhaUsuario][coluna], );
+        return montarCooordenada(matrizBasica[linhaUsuario][coluna], content[linha][coluna]);
     }
 
     private Double calcularSimiliridade(Double distancia){
@@ -61,5 +62,12 @@ public class MatrizSimilaridade {
 
     public Double[][] getContent() {
         return content;
+    }
+
+    private  Coordenadas montarCooordenada(Double x, Double y){
+        Coordenadas c = new Coordenadas(x, y);
+        c.setX(x);
+        c.setY(y);
+        return c;
     }
 }

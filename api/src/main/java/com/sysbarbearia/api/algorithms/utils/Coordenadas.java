@@ -1,6 +1,7 @@
 package com.sysbarbearia.api.algorithms.utils;
 
-public class Coordenaprivate Double x;
+public class Coordenadas {
+    private Double x;
     private Double y;
 
     public Double getX() {

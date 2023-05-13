@@ -18,7 +18,6 @@ public class MatrizSimilaridade {
         this.colSize = m.getColSize() + 2;
         this.rowSize = m.getRowSize();
         this.linhaUsuario = m.getClientes().indexOf(c);
-        this.content = new Double[this.rowSize][this.colSize];
         montarTabela(m.getContent());
     }
     private void montarTabela(Double[][] matrizBasica) {
@@ -50,9 +49,7 @@ public class MatrizSimilaridade {
             content[linha][coluna] = calcularSimiliridade(DE.calcularDistancia(coordenadas));
             return montarCooordenada(null, null);
         }
-
         content[linha][coluna] = matrizBasica[linha][coluna];
-        //return new Coordenadas(matrizBasica[linhaUsuario][coluna], );
         return montarCooordenada(matrizBasica[linhaUsuario][coluna], content[linha][coluna]);
     }
 
@@ -65,9 +62,35 @@ public class MatrizSimilaridade {
     }
 
     private  Coordenadas montarCooordenada(Double x, Double y){
-        Coordenadas c = new Coordenadas(x, y);
-        c.setX(x);
-        c.setY(y);
+        Coordenadas c = new Coordenadas(x,y);
         return c;
+    }
+
+    public void setContent(Double[][] content) {
+        this.content = content;
+    }
+
+    public Integer getRowSize() {
+        return rowSize;
+    }
+
+    public void setRowSize(Integer rowSize) {
+        this.rowSize = rowSize;
+    }
+
+    public Integer getColSize() {
+        return colSize;
+    }
+
+    public void setColSize(Integer colSize) {
+        this.colSize = colSize;
+    }
+
+    public Integer getLinhaUsuario() {
+        return linhaUsuario;
+    }
+
+    public void setLinhaUsuario(Integer linhaUsuario) {
+        this.linhaUsuario = linhaUsuario;
     }
 }

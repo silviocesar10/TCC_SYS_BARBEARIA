@@ -1,26 +1,25 @@
 package com.sysbarbearia.api.algorithms.utils;
 
-public class Coordenadas {
-    private double x;
-    private double y;
+public class Coordenaprivate Double x;
+    private Double y;
 
-    public double getX() {
+    public Double getX() {
         return x;
     }
 
-    public void setX(double x) {
+    public void setX(Double x) {
         this.x = x;
     }
 
-    public double getY() {
+    public Double getY() {
         return y;
     }
 
-    public void setY(double y) {
+    public void setY(Double y) {
         this.y = y;
     }
 
-    public Coordenadas(double x, double y) {
+    public Coordenadas(Double x, Double y) {
         this.x = x;
         this.y = y;
     }

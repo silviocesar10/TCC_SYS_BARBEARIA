@@ -18,19 +18,18 @@ public class MatrizSimilaridade {
         this.colSize = m.getColSize() + 2;
         this.rowSize = m.getRowSize();
         this.linhaUsuario = m.getClientes().indexOf(c);
-        this.content = new Double[this.rowSize][this.colSize];
         montarTabela(m.getContent());
     }
     private void montarTabela(Double[][] matrizBasica) {
         content = new Double[rowSize][colSize];
 
         for (int i = 0; i < rowSize; i++) {
-            calculateCellsValues(matrizBasica, i);
+            calculoValorCelula(matrizBasica, i);
         }
     }
 
-    private void calculateCellsValues(Double[][] matrizBasica, Integer row) {
-        List<Coordenadas> coordenadas = new ArrayList<>();
+    private void calculoValorCelula(Double[][] matrizBasica, Integer row) {
+        List<Coordenadas> coordenadas = new ArrayList<Coordenadas>();
 
         for(int j = 0; j < colSize; j++) {
             coordenadas.add(calculoCelula(matrizBasica, row, j, coordenadas));
@@ -43,16 +42,15 @@ public class MatrizSimilaridade {
         DistanciaEuclidiana DE = new DistanciaEuclidiana();
         if (coluna.equals(distanceColIndex)) {
             content[linha][coluna] = DE.calcularDistancia(coordenadas);
-            return new Coordenadas(new Double(null) , new Double(null) );
+            return montarCooordenada(null, null);
         }
 
         if (coluna.equals(similarityColIndex)) {
             content[linha][coluna] = calcularSimiliridade(DE.calcularDistancia(coordenadas));
-            return new Coordenadas(new Double(null) , new Double(null) );
+            return montarCooordenada(null, null);
         }
-
         content[linha][coluna] = matrizBasica[linha][coluna];
-        return new Coordenadas(matrizBasica[linhaUsuario][coluna], content[linha][coluna]);
+        return montarCooordenada(matrizBasica[linhaUsuario][coluna], content[linha][coluna]);
     }
 
     private Double calcularSimiliridade(Double distancia){
@@ -63,11 +61,36 @@ public class MatrizSimilaridade {
         return content;
     }
 
+    private  Coordenadas montarCooordenada(Double x, Double y){
+        Coordenadas c = new Coordenadas(x,y);
+        return c;
+    }
+
+    public void setContent(Double[][] content) {
+        this.content = content;
+    }
+
     public Integer getRowSize() {
         return rowSize;
     }
 
+    public void setRowSize(Integer rowSize) {
+        this.rowSize = rowSize;
+    }
+
     public Integer getColSize() {
         return colSize;
+    }
+
+    public void setColSize(Integer colSize) {
+        this.colSize = colSize;
+    }
+
+    public Integer getLinhaUsuario() {
+        return linhaUsuario;
+    }
+
+    public void setLinhaUsuario(Integer linhaUsuario) {
+        this.linhaUsuario = linhaUsuario;
     }
 }

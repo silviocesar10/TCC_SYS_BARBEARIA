@@ -1,30 +1,42 @@
 package com.sysbarbearia.api.algorithms.utils;
 import com.sysbarbearia.api.model.*;
+import com.sysbarbearia.api.repositories.UsoRepository;
 import com.sysbarbearia.api.services.UsoService;
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Optional;
 
+//@Component
 public class MatrizBasica {
 	private Double[][] content;
 	private Integer rowSize;
 	private Integer colSize;
 
-	@Autowired
-	private UsoService avservice;
-	private List<Cliente> clientes = new ArrayList<Cliente>();
-	private List<ServicoOferecido> servicos = new ArrayList<ServicoOferecido>();
+	///@Autowired
+	//private UsoService avservice;
+	private List<Cliente> clientes;
+	private List<ServicoOferecido> servicos;
+
+	private List<Uso> usos;
 
 	//private Integer usuarioRow;
 
-	public MatrizBasica(List<ServicoOferecido> servicos, List<Cliente> clientes) {
+	//@Autowired
+	//private UsoService usoService = new UsoService();
+
+	//@Autowired
+	//private UsoRepository repository;
+
+	public MatrizBasica(List<ServicoOferecido> servicos, List<Cliente> clientes, List<Uso> usos) {
 		this.rowSize = clientes.size();
 		this.colSize = servicos.size();
 		this.servicos = servicos;
 		this.clientes = clientes;
 		this.content = new Double[this.rowSize][this.colSize];
+		this.usos = usos;
 		preenheMatriz();
 	}
 
@@ -47,7 +59,12 @@ public class MatrizBasica {
 	}
 
 	private Optional<Uso> getUsoByServicoByCliente(Cliente c, ServicoOferecido s) {
-		List<Uso> allUso = new ArrayList<Uso>(avservice.findAll());
+		//UsoService avservice = new UsoService();
+		//System.out.println("conteudo usoService "+ usoService);
+		//System.out.println("conteudo usoRepository "+ repository);
+		//List<Uso> allUso = new ArrayList<Uso>(avservice.findAll());
+		//List<Uso> allUso;// = new ArrayList<Uso>();
+		List<Uso> allUso = new ArrayList<Uso>(this.usos);
 		if (allUso.stream().filter(a -> a.getServicoofrc().getIdServicoOfrc() == s.getIdServicoOfrc() && a.getCliente().getidCliente() == c.getidCliente()).findFirst() == null) {
 			return null;
 		} else {

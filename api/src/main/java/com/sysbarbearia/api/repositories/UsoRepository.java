@@ -14,6 +14,10 @@ public interface UsoRepository extends JpaRepository <Uso, Integer>{
 	@Query(value = "SELECT * FROM USO u WHERE u.ID_CLIENTE= ?1" , nativeQuery = true)
     public Collection<?> findAvaliacaoByUsuario(Integer id);
 
+	@Transactional(readOnly = true)
+	@Query(value = "SELECT * FROM USO" , nativeQuery = true)
+	public Collection<Uso> findTudo();
+
     //@Transactional(readOnly = true)
     //@Query(value = "select c.nome as nome, count(r.valor) as quantidade, l.autor, l.titulo_livro from reserva r, livro l, cliente c where r.id_pessoa = c.id_pessoa and r.id_livro = l.id_livro and DATA_RESERVA > ?1 and DATA_RESERVA < ?2 group by c.nome , l.autor, l.titulo_livro;", nativeQuery = true)
 	//public Collection<?> findQuantidadesReservasOfClientesByPeriodo(Date inicio, Date termino);

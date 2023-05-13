@@ -37,10 +37,18 @@ public class RecomendacaoService {
 		//if(encontrarCliente(idCliente, allCliente) == null){
 		//System.out.println( "O cliente informado não pode ser encontrado para ser avaliado");
 		//}
-			MatrizSimilaridade ms = new MatrizSimilaridade(mb, encontrarCliente(1, allCliente));
-		//printContentMatrix(ms.getContent(), mb.getRowSize(),  mb.getColSize());
+		MatrizSimilaridade ms = new MatrizSimilaridade(mb, encontrarCliente(1, allCliente));
+		printContentMatrix(ms.getContent(), ms.getRowSize(),  ms.getColSize());
 
 
+	}
+	public void calcular(int col, int rol, Double [][] m){
+		int colDistancia = col -2;
+		for(int i =0; i < rol; i++){
+			for(int j = 0; j < colDistancia; j++){
+
+			}
+		}
 	}
 
 	public Cliente encontrarCliente(int id, List<Cliente> l){

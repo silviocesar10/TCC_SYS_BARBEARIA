@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 
 import com.sysbarbearia.api.algorithms.utils.MatrizSimilaridade;
+import com.sysbarbearia.api.algorithms.utils.PosicaoCelula;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,11 +43,13 @@ public class RecomendacaoService {
 
 
 	}
-	public void calcular(int col, int rol, Double [][] m){
+	public void calcular(int col, int rol, Double [][] m, List<PosicaoCelula> pc){
 		int colDistancia = col -2;
 		for(int i =0; i < rol; i++){
 			for(int j = 0; j < colDistancia; j++){
-
+				if(m[i][j] == null){
+					pc.add(new PosicaoCelula(i, j));
+				}
 			}
 		}
 	}

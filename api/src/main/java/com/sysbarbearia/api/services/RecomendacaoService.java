@@ -2,10 +2,12 @@ package com.sysbarbearia.api.services;
 //import java.util.Collection;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 import com.sysbarbearia.api.algorithms.utils.MatrizSimilaridade;
 import com.sysbarbearia.api.algorithms.utils.PosicaoCelula;
+import com.sysbarbearia.api.model.Recomendacao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,8 @@ import com.sysbarbearia.api.algorithms.utils.MatrizBasica;
 
 @Service
 public class RecomendacaoService {
+
+	private final Double NOTADECORTE = 3.0d;
 	@Autowired
 	private ClienteService clienteService;
 
@@ -24,10 +28,14 @@ public class RecomendacaoService {
 	private ServicoOferecidoService servicoOferecidoService;
 	private List<Cliente> allCliente;
 
+	@Autowired
+	private RecomendacaoOffilineService recomendacaoOffilineService;
+
 	//@Autowired
 	//UsoRepository repo;
 	@Autowired
 	UsoService usoService;
+
 	public void recomendacaoCollaborativa(Integer idEmpresa, Integer idCliente) {
 		List<Uso> allUso = new ArrayList<Uso>(usoService.findAll());
 		allUso.forEach(System.out::println);
@@ -43,14 +51,41 @@ public class RecomendacaoService {
 
 
 	}
-	public void calcular(int col, int rol, Double [][] m, List<PosicaoCelula> pc){
+
+	public List<ServicoOferecido> calcular(int col, int rol, Double [][] m, List<PosicaoCelula> pc, int linhaUsuario){
 		int colDistancia = col -2;
 		for(int i =0; i < rol; i++){
 			for(int j = 0; j < colDistancia; j++){
-				if(m[i][j] == null){
+				if(linhaUsuario == i && m[i][j] == null){
 					pc.add(new PosicaoCelula(i, j));
 				}
 			}
+		}
+		List<ServicoOferecido> lista = new ArrayList<ServicoOferecido>();
+		Integer tmp;
+		PosicaoCelula este = pc.stream().findFirst().get();
+		tmp = pc.stream().findFirst().get().getColuna();
+		while(este != null){
+			ServicoOferecido s = multiplicar(m, linhaUsuario, tmp, colDistancia + 1);
+			if(s != null){
+				lista.add(s);
+			}
+		}
+		return lista;
+
+	}
+	private ServicoOferecido multiplicar(Double m[][], int linhaUsuario, int col, int colDistancia){
+		Double soma = 0.0d;
+		for (int h = col ; h < col; h++){
+			soma += m[h][col] * m[h][colDistancia];
+		}
+		if(soma >= NOTADECORTE){
+			System.out.println("vai ser recomendado");
+			return servicoOferecidoService.findById(col + 1);
+		}
+		else
+		{
+			return null;
 		}
 	}
 

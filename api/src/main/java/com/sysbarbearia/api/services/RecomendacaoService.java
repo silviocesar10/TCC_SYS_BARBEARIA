@@ -65,6 +65,7 @@ public class RecomendacaoService {
 		Integer tmp;
 		PosicaoCelula este = pc.stream().findFirst().get();
 		tmp = pc.stream().findFirst().get().getColuna();
+		lista.remove(este);
 		while(este != null){
 			ServicoOferecido s = multiplicar(m, linhaUsuario, tmp, colDistancia + 1);
 			if(s != null){

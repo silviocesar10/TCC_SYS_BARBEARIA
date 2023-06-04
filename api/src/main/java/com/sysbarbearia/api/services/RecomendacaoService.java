@@ -1,8 +1,6 @@
 package com.sysbarbearia.api.services;
 //import java.util.Collection;
-import java.util.List;
-import java.util.ArrayList;
-
+import java.util.*;
 
 import com.sysbarbearia.api.algorithms.utils.MatrizSimilaridade;
 import com.sysbarbearia.api.algorithms.utils.PosicaoCelula;
@@ -70,17 +68,24 @@ public class RecomendacaoService {
 		}
 		List<ServicoOferecido> lista = new ArrayList<ServicoOferecido>();
 		Integer tmp;
-		do{
+		while (pc.size() > 0){
 			for (PosicaoCelula n : pc) {
 				tmp = n.getColuna();
 				ServicoOferecido s = multiplicar(m, linhaUsuario, tmp, col, rol);
 				if (s != null) {
 					lista.add(s);
 				}
-
 			}
 			pc.remove(0);
-		}while (pc.size() > 0);
+		}
+		Set<ServicoOferecido> set = new LinkedHashSet<>();
+		set.addAll(lista);
+
+		// delete al elements of arraylist
+		lista.clear();
+
+		// add element from set to arraylist
+		lista.addAll(set);
 		return lista;
 
 	}

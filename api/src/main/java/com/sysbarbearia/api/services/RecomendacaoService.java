@@ -2,8 +2,6 @@ package com.sysbarbearia.api.services;
 //import java.util.Collection;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 
 import com.sysbarbearia.api.algorithms.utils.MatrizSimilaridade;
@@ -15,6 +13,7 @@ import com.sysbarbearia.api.services.exceptions.BusinessRuleException;
 import com.sysbarbearia.api.model.ServicoOferecido;
 import com.sysbarbearia.api.model.Cliente;
 import com.sysbarbearia.api.model.Uso;
+import com.sysbarbearia.api.model.Recomendacao;
 import com.sysbarbearia.api.algorithms.utils.MatrizBasica;
 
 @Service
@@ -49,6 +48,13 @@ public class RecomendacaoService {
 		List<ServicoOferecido> lista = calcular(ms.getColSize(), ms.getRowSize(),ms.getContent(),pc, ms.getLinhaUsuario());
 		if(lista.isEmpty()){
 			throw new BusinessRuleException("Não ha recomendações disponiveis para o usuario alvo " + encontrarCliente(idCliente, allCliente).getNome());
+		}
+		for(ServicoOferecido s: lista){
+			Recomendacao r = new Recomendacao();
+			r.setCliente( encontrarCliente(idCliente, allCliente));
+			r.setData();
+			r.setServicoOferecido(s);
+			recomendacaoOffilineService.insert(r);
 		}
 		return lista;
 	}

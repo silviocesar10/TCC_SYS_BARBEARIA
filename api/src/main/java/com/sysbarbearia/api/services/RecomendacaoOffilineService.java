@@ -7,9 +7,11 @@ import com.sysbarbearia.api.services.exceptions.DataIntegrityException;
 import com.sysbarbearia.api.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
+@Service
 public class RecomendacaoOffilineService {
 
     @Autowired

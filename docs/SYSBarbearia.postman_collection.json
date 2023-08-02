@@ -3,11 +3,12 @@
 		"_postman_id": "6611791e-01c7-4458-84ab-b6aade918f41",
 		"name": "SYSBarbearia",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "15667479"
+		"_exporter_id": "15667479",
+		"_collection_link": "https://planetary-spaceship-274685.postman.co/workspace/SYSBARBEARIA~d278c4aa-71f1-4d91-be5a-6a88e070ddbe/collection/15667479-6611791e-01c7-4458-84ab-b6aade918f41?action=share&creator=15667479&source=collection_link"
 	},
 	"item": [
 		{
-			"name": "test",
+			"name": "CRUD_DADOS_TESTE",
 			"item": [
 				{
 					"name": "barbearia",
@@ -924,6 +925,25 @@
 									"response": []
 								}
 							]
+						},
+						{
+							"name": "localhost:8080/usos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/usos/",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"usos",
+										""
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -1096,6 +1116,156 @@
 							"response": []
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "testeRecomendacao",
+			"item": [
+				{
+					"name": "http://localhost:8080/recomendacao?idCliente=1&idEmpresa=1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/recomendacao?idCliente=1&idEmpresa=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recomendacao"
+							],
+							"query": [
+								{
+									"key": "idCliente",
+									"value": "1"
+								},
+								{
+									"key": "idEmpresa",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/recomendacao?idCliente=2&idEmpresa=1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/recomendacao?idCliente=2&idEmpresa=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recomendacao"
+							],
+							"query": [
+								{
+									"key": "idCliente",
+									"value": "2"
+								},
+								{
+									"key": "idEmpresa",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/recomendacao?idCliente=3&idEmpresa=1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/recomendacao?idCliente=3&idEmpresa=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recomendacao"
+							],
+							"query": [
+								{
+									"key": "idCliente",
+									"value": "3"
+								},
+								{
+									"key": "idEmpresa",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/recomendacao?idCliente=4&idEmpresa=1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/recomendacao?idCliente=4&idEmpresa=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recomendacao"
+							],
+							"query": [
+								{
+									"key": "idCliente",
+									"value": "4"
+								},
+								{
+									"key": "idEmpresa",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/recomendacao?idCliente=5&idEmpresa=1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/recomendacao?idCliente=4&idEmpresa=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recomendacao"
+							],
+							"query": [
+								{
+									"key": "idCliente",
+									"value": "4"
+								},
+								{
+									"key": "idEmpresa",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}

@@ -63,6 +63,6 @@ public class Recomendacao implements Serializable{
 
     public void setData() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        this.data = LocalDateTime.now();
+        this.data = LocalDateTime.now().toLocalDate().atStartOfDay();
     }
 }

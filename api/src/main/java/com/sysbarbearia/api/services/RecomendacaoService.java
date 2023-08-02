@@ -98,7 +98,7 @@ public class RecomendacaoService {
 				}else{
 					soma += m[i][col] * m[i][colDistancia - 1];
 					simi = simi + m[i][colDistancia - 1];
-					System.out.println("soma aqui" + soma);
+					//System.out.println("soma aqui" + soma);
 				}
 
 

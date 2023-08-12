@@ -26,6 +26,11 @@ public class Cliente implements Serializable{
 	@Size(min = 2, max = 50, message = "A senha deve ter entre 2 e 50 letras")
 	private String senha;
 
+	@Column(length = 100)
+	@NotNull(message = "O email nao deve ficar em branco")
+	@Size(min = 2, max = 50, message = "O email deve ter entre 2 e 50 letras")
+	private String email;
+
 	@NotBlank(message = "O campo da encereco deve ser preenchido")
     @Size(min = 2, max = 100, message = "O campo endereco deve ter entre 2 e 100 letras")  
 	private String endereco;
@@ -63,6 +68,14 @@ public class Cliente implements Serializable{
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getEndereco() {

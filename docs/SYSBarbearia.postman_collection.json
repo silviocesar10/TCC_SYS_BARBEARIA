@@ -3,8 +3,7 @@
 		"_postman_id": "6611791e-01c7-4458-84ab-b6aade918f41",
 		"name": "SYSBarbearia",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "15667479",
-		"_collection_link": "https://planetary-spaceship-274685.postman.co/workspace/SYSBARBEARIA~d278c4aa-71f1-4d91-be5a-6a88e070ddbe/collection/15667479-6611791e-01c7-4458-84ab-b6aade918f41?action=share&creator=15667479&source=collection_link"
+		"_exporter_id": "15667479"
 	},
 	"item": [
 		{
@@ -957,7 +956,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nome\": \"Alberto\",\n    \"endereco\": \"nova brasilia cachoeiro\",\n    \"cpf\": \"000.000.000-00\",\n    \"telefone\": \"000000000\" \n}",
+									"raw": "{\n    \"nome\": \"Alberto\",\n    \"senha\":\"123456\",\n    \"email\": \"alberto@email.com\",\n    \"endereco\": \"nova brasilia cachoeiro\",\n    \"cpf\": \"000.000.000-00\",\n    \"telefone\": \"000000000\" \n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -984,7 +983,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nome\": \"Bianca\",\n    \"endereco\": \"nova brasilia cachoeiro\",\n    \"cpf\": \"000.000.000-01\",\n    \"telefone\": \"000000000\" \n}",
+									"raw": "{\n    \"nome\": \"Bianca\",\n    \"senha\":\"123456\",\n    \"email\": \"bianca@email.com\",\n    \"endereco\": \"nova brasilia cachoeiro\",\n    \"cpf\": \"000.000.000-01\",\n    \"telefone\": \"000000000\" \n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1011,7 +1010,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nome\": \"Carlos\",\n    \"endereco\": \"nova brasilia cachoeiro\",\n    \"cpf\": \"000.000.000-02\",\n    \"telefone\": \"000000000\" \n}",
+									"raw": "{\n    \"nome\": \"Carlos\",\n    \"senha\":\"123456\",\n    \"email\": \"carlos@email.com\",\n    \"endereco\": \"nova brasilia cachoeiro\",\n    \"cpf\": \"000.000.000-02\",\n    \"telefone\": \"000000000\" \n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1038,7 +1037,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nome\": \"Daniele\",\n    \"endereco\": \"nova brasilia cachoeiro\",\n    \"cpf\": \"000.000.000-03\",\n    \"telefone\": \"000000000\" \n}",
+									"raw": "{\n    \"nome\": \"Daniele\",\n    \"senha\":\"123456\",\n    \"email\": \"daniele@email.com\",\n    \"endereco\": \"nova brasilia cachoeiro\",\n    \"cpf\": \"000.000.000-03\",\n    \"telefone\": \"000000000\" \n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1065,7 +1064,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nome\": \"Eder\",\n    \"endereco\": \"nova brasilia cachoeiro\",\n    \"cpf\": \"000.000.000-04\",\n    \"telefone\": \"000000000\" \n}",
+									"raw": "{\n    \"nome\": \"Eder\",\n    \"senha\":\"123456\",\n    \"email\": \"eder@email.com\",\n    \"endereco\": \"nova brasilia cachoeiro\",\n    \"cpf\": \"000.000.000-04\",\n    \"telefone\": \"000000000\" \n}",
 									"options": {
 										"raw": {
 											"language": "json"
